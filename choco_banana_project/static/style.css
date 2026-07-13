@@ -1,0 +1,28 @@
+
+body {
+    background-color: #fffdf6; 
+    color: #221203;
+    font-family: sans-serif;
+}
+
+.style-hero {
+    background-color: #fbf0b1;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.style-btn {
+    background-color: #4a2c11 !important; 
+    color: white !important;
+    font-weight: bold;
+}
+
+.style-btn:hover {
+    background-color: #221203 !important;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+}

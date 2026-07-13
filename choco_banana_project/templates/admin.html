@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4 fw-bold text-dark">🛡️ ადმინისტრატორის მართვის გვერდი</h2>
+
+    <div class="my-4">
+        <h4>📥 შემოსული შეკვეთები:</h4>
+        <table class="table table-bordered mt-2">
+            <tr class="table-dark">
+                <th>ID</th><th>კლიენტი</th><th>ტელეფონი</th><th>მისამართი</th><th>კომენტარი</th>
+            </tr>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td><td>{{ order.name }}</td><td>{{ order.phone }}</td><td>{{ order.address }}</td><td>{{ order.notes }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="my-5">
+        <h4>👥 დარეგისტრირებული მომხმარებლები:</h4>
+        <table class="table table-bordered mt-2">
+            <tr class="table-secondary">
+                <th>ID</th><th>სახელი</th><th>ელ-ფოსტა</th><th>როლი</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td><td>{{ user.username }}</td><td>{{ user.email }}</td>
+                <td>
+                    {% if user.is_admin %}
+                        <span class="badge bg-danger">Admin</span>
+                    {% else %}
+                        <span class="badge bg-primary">მომხმარებელი</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}
